@@ -1,0 +1,246 @@
+body{
+
+}
+
+
+div#top-bar{
+
+    background-color: #282828;
+    width: 100%;
+    height: 10%;
+    margin: 0px;
+    padding: 0%;
+    display: block;
+
+}
+
+div#tdcolor{
+
+    /* background-color: #e98962; */
+
+}
+
+.AMPM{
+
+    margin-right: 0.5%;
+
+}
+
+span.tagListItemText{
+
+    font-weight: bold;
+
+}
+
+ul.TagsList{
+
+    list-style-type: none;
+
+}
+
+p#tdtm{
+
+    margin-top: 0.3em;
+
+}
+
+h3#tdt{
+
+    margin-top: 0.5em;
+    margin-bottom: 0%;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+
+input.minutes{
+
+    width: 2%;
+}
+
+div#top-bar-elements{
+    display: block;
+    color: white;
+}
+
+div.TagsDivTitle{
+
+    text-align: center;
+
+}
+
+div#Tags{
+
+    display: inline-block;
+    width: 15.45em;
+    height: 30em;
+    margin-top: 3.6%;
+    margin-left: 3%;
+    margin-right: auto;
+    overflow-y: auto;
+    background-color: #f45f42;
+
+}
+
+div#currMonth{
+
+    display: block;
+    /* padding-bottom: 1%; */
+    /* padding-top: 1%; */
+    margin-top: 0.25%;
+    margin-bottom: 4%;
+    width: 100%;
+    background-color: #282828;
+    text-align: center;
+    font-size: 3.5em;
+    color: white;
+
+}
+
+input#addTitle{
+
+    width: 15%;
+
+}
+
+div#addEventForm{
+
+    display: block;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    /* margin-top: 0.25%; */
+    /* margin-bottom: 4%; */
+    width: 100%;
+    background-color: #282828;
+    text-align: center;
+    color: white;
+    display:none;
+
+}
+
+div#calendar{
+
+    float: right;
+    width: 100%;
+    display: inline-block;
+    /* background-color: #991482; */
+    margin-left: auto;
+    margin-right: 4%;
+    width: 75%;
+
+}
+
+div#weekdays{
+
+    /* background: #000000; */
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2em;
+    justify-content: center;
+    display: flex;
+
+}
+
+div.day{
+    /* background-color: #819482; */
+    display: inline-block;
+    text-align: center;
+    font-style: strong;
+    font-size: 1.5em;
+    width: 7.2em;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+div#calRow{
+    /* background-color: #049242; */
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2em;
+    justify-content: center;
+    display: flex;
+
+}
+
+p.entryDate{
+
+    display: flex;
+
+}
+
+div#leftSide{
+
+    display: inline-block;
+    padding: 10px;
+
+}
+
+div#rightSide{
+
+    display: inline-block;
+    padding: 10px;
+
+}
+
+div.rowEntry{
+
+    display: inline-block;
+    text-align: center;
+    width: 10.45em;
+    height: 10em;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    overflow-y: auto;
+    background-color: #f45f42;
+
+}
+
+div.entryHeader{
+
+    /* text-align: center;
+    padding-top: 5px;
+    font-weight: bold;
+    display: inline-block; */
+    width: auto;
+    background-color: #f45f42;
+
+}
+
+
+ul.eventsList{
+
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+div#left{
+
+    margin-left: 100px;
+    padding: 0px;
+    float: left;
+    width: 44%;
+    margin: 0 auto;
+    padding: 0px;
+    border: 0px solid black;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 300px;
+
+
+
+}
+
+.dButton:hover{
+
+    color: red;
+
+}
+
+.mButton:hover{
+
+    color: green;
+
+}

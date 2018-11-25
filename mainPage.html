@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Module #5 Calendar</title>
+    <link rel="stylesheet" type="text/css" href= "calendar.css" />
+    <div id = "top-bar">
+        <div id = "top-bar-elements">
+            <div id = "leftSide">
+                <label class = "nextLast">Next Month: </label>
+                <input type = "button" id = "next_month_btn" class = "nextLast"/>
+                <br><br>
+                <label for = "previous month">Last Month: </label>
+                <input type = "button" id = "prevs_month_btn" class = "nextLast"/>
+            </div>
+            <div id = "rightSide">
+                <p class= "loginText">Please input your username and password and press 'Login' to access the Calendar as a user! If you do not have an account, put in a new username and password below and press 'Register'</p>
+                <input type="text" id="username" placeholder="Username" />
+                <input type="password" id="password" placeholder="Password" />
+                <button id="login_btn">Log In</button>
+                <br><br>
+                <input type="text" id="regUsername" placeholder="Username" />
+                <input type="password" id="regPassword" placeholder="Password" />
+                <button id= "register_btn">Register </button>
+                <div id= "regOutput"></div>
+                <button id="logout">Logout</div>
+                <br>
+            </div>
+        </div>
+    </div>
+</head>
+<body>
+    <div id = "addEventForm">
+            <select type="select" class="hour">
+                <option value = "01">1</option>
+                <option value = "02">2</option>
+                <option value = "03">3</option>
+                <option value = "04">4</option>
+                <option value = "05">5</option>
+                <option value = "06">6</option>
+                <option value = "07">7</option>
+                <option value = "08">8</option>
+                <option value = "09">9</option>
+                <option value = "10">10</option>
+                <option value = "11">11</option>
+                <option value = "12">12</option>
+            </select>
+            <span>:</span>
+            <input type = "text" class = "minutes" maxlength = "2" placeholder = "##"/>  <!-- maxlength attribute is a behavior, not a style. -- cannot be done in CSS. -->
+            <select type="select" class = "AMPM">
+                    <option value = "am">AM</option>
+                    <option value = "pm">PM</option>
+            </select>
+            <select type="select" class ="month">
+                <option value = "01">January</option>
+                <option value = "02">February</option>
+                <option value = "03">March</option>
+                <option value = "04">April</option>
+                <option value = "05">May</option>
+                <option value = "06">June</option>
+                <option value = "07">July</option>
+                <option value = "08">August</option>
+                <option value = "09">September</option>
+                <option value = "10">October</option>
+                <option value = "11">November</option>
+                <option value = "12">December</option>
+            </select>
+            <input type="text" class="date" maxlength="2" placeholder="Day"/>
+            <input type="text" class="year" placeholder="Event Year"/>
+            <input type="text" class="eventName" placeholder="Event Name"/>
+            <span>Event Tag: </span>
+            <select type="select" class="hour">
+                    <option value = "None">None</option>
+                    <!-- Use the DOM to procedurally generate more options here with Values & Text = to those displyed in the "Tags" list -->
+            </select>
+            <button type="button" id="addEvent" class="addEvent">Add Event</button>
+            <button type="button" id="deleteEvent" class="deleteEvent">Delete Event</button>
+            <button type="button" id="updateEvent" class="updateEvent">Update Event</button>
+
+    </div>
+    <div id = "currMonth"></div>
+        <div>
+            <div id = "Tags">
+                <div class = "TagsDivTitle">
+                    <div id = "tdcolor">
+                        <h3 id = "tdt">Event Tags</h3>
+                        <p id = "tdtm">You can add a maximum of 5 tags!</p>
+                        <input type = "textbox" id = "newTagtext">
+                        <button type="button" id = "addTagButton">Add Tag</button>
+                    </div>
+                </div>
+                <ul class = "TagsList" id  = "tlist">
+                    <li class = "TagsListLiModel" id = "uniqueLiId">
+                        <span class = "tagListItemText" id = "thisLiIdTextId">Text</span>
+                        <input type = "checkbox" id = "tagListItemIdCB">
+                        <button type="button" id = "thisTagLiIdDelete">Delete</button>
+                        <button type="button" id = "thisTagLiIdModify">Modify</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div id = "calendar">
+                <div id = "weekdays">
+                    <div class = "day">Sunday</div>
+                    <div class = "day">Monday</div>
+                    <div class = "day">Tuesday</div>
+                    <div class = "day">Wednesday</div>
+                    <div class = "day">Thursday</div>
+                    <div class = "day">Friday</div>
+                    <div class = "day">Saturday</div>
+                </div>
+                <div id = "calRow">
+                    <!-- FORMAT FOR "rowEntry" div Contents below. Will have to be re-constructed for each entry given the appropriate set of events & event times. + entry dates will have to be generated-->
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "1">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list1">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span  id = "2">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list2">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "3">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list3">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "4">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list4">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "5">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list5">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "6">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list6">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "7">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list7">
+                        </ul>
+                    </div>
+                </div>
+                <div id = "calRow">
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "8">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list8">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "9">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list9">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "10">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list10">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "11">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list11">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "12">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list12">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "13">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list13">
+                        </ul>
+                    </div>
+
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "14">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list14">
+                        </ul>
+                    </div>
+                </div>
+                <div id = "calRow">
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "15">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list15">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "16">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list16">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "17">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list17">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "18">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list18">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "19">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list19">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "20">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list20">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "21">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list21">
+                        </ul>
+                    </div>
+                </div>
+                <div id = "calRow">
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "22">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list22">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "23">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list23">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "24">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list24">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "25">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list25">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "26">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list26">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "27">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list27">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "28">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list28">
+                        </ul>
+                    </div>
+                </div>
+
+                <div id = "calRow">
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "29">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list29">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "30">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list30">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "31">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list31">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "32">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list32">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "33">text</span>
+                        </div>
+                        <ul class = "eventsList" id  = "list33">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "34"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list34">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "35"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list35">
+                        </ul>
+                    </div>
+                </div>
+
+                <div id = "calRow">
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "36"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list36">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "37"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list37">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "38"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list38">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "39"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list39">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "40"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list40">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "41"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list41">
+                        </ul>
+                    </div>
+                    <div class = "rowEntry">
+                        <div class = "entryHeader">
+                            <span id = "42"></span>
+                        </div>
+                        <ul class = "eventsList" id  = "list42">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="calendarDisplay.js"></script>
+<script type="text/javascript" src="calendarHelper.js"></script> <!-- load ajax register javascript file -->
+</html>
